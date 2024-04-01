@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jmeter-pod
+spec:
+  containers:
+    - name: jmeter-container
+      image: username/jmeter-image:latest
+      args: ["tail", "-f", "/dev/null"]
+      resources:
+        requests:
+          memory: "3Gi"
+          cpu: "1"
+        limits:
+          memory: "5Gi"
+          cpu: "2"
