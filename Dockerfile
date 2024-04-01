@@ -22,7 +22,10 @@ ENV PATH $JMETER_HOME/bin:$PATH
 ENV JVM_ARGS="-Xms2g -Xmx2g -XX:MaxMetaspaceSize=256m"
 
 # Copy your JMeter test script into the container
-COPY ./scripts/loadScript.jmx /tests/loadScript.jmx
+COPY ./scripts/loadScript.jmx /scripts/loadScript.jmx
+
+# Copy your CSV Data Set Config into the container
+COPY ./scripts-config/config.csv /scripts-config/config.csv
 
 # Define volume for results
 VOLUME /results

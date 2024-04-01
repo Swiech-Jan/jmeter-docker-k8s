@@ -14,11 +14,11 @@ nano /tests/loadScript.jmx
 ```
 ### Run tests with:
 ``` 
-jmeter -n -t /tests/loadScript.jmx -l /results/test-results.jtl 
+jmeter -n -t /scripts/loadScript.jmx -l /results/test-results.jtl 
 ```
 ### Running with log file generation:
 ``` 
-jmeter -n -t /tests/loadScript.jmx -l /results/test-results.jtl > /results/jmeter.log 2>&1 
+jmeter -n -t /scripts/loadScript.jmx -l /results/test-results.jtl > /results/jmeter.log 2>&1 
 ```
 
 ### To Copy the results on your machine:
@@ -42,7 +42,7 @@ kubectl exec -it jmeter-pod -- /bin/bash
 ```
 ### Run tests from within the pod:
 ```
-jmeter -n -t /tests/loadScript.jmx -l /results/test-results.jtl
+jmeter -n -t /scripts/loadScript.jmx -l /results/test-results.jtl
 ```
 ### Copy the results file 
 ```
