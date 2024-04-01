@@ -30,7 +30,23 @@ docker cp jmeter-test:/results/test-results.jtl /path/to/local/results/
 docker stop jmeter-test && docker rm jmeter-test 
 ```
 
+## Tagging and pushing the Image to Docker Registry (required for k8s)
+### DockerHub example:
+``` 
+docker login 
+```
+### Tag Your Docker Image
+``` 
+docker tag my-jmeter-test username/jmeter-image:latest
+```
+### Push the Image to DockerHub
+``` 
+docker push username/jmeter-image:latest
+```
+
 ## Running in k8s:
+### Before - be sure that jmeter docker image was pushed to docker registry
+### Adjust the 'image' configuration in pod-definition.yaml accordingly
 ### Proceed to the k8s folder and execute:
 ``` 
 kubectl apply -f pod-definition.yaml 
